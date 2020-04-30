@@ -5,6 +5,16 @@ class RegisterPage extends Component {
   state = {
     username: '',
     password: '',
+    firstName:'',
+    lastName: '',
+    employeeId: '',
+    email: '', 
+    address: '',
+    addressLine2:'',
+    city:'',
+    stateName:'',
+    zipCode:'',
+    admin: '',
   };
 
   registerUser = (event) => {
@@ -14,8 +24,20 @@ class RegisterPage extends Component {
       this.props.dispatch({
         type: 'REGISTER',
         payload: {
+
           username: this.state.username,
           password: this.state.password,
+          firstName : this.state.firstName,
+          lastName: this.state.lastName,
+          employeeId: this.state.employeeId,
+          email: this.state.email,
+          address: this.state.address,
+          addressLine2: this.state.addressLine2,
+          city: this.state.city,
+          stateName: this.state.stateName,
+          zipCode: this.state.zipCode,
+          admin: this.state.admin
+
         },
       });
     } else {
@@ -61,6 +83,116 @@ class RegisterPage extends Component {
                 name="password"
                 value={this.state.password}
                 onChange={this.handleInputChangeFor('password')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="fisrtName">
+              First Name:
+              <input
+                type="text"
+                name="firstName"
+                value={this.state.firstName}
+                onChange={this.handleInputChangeFor('firstName')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="lastName">
+              Last Name:
+              <input
+                type="text"
+                name="lastname"
+                value={this.state.lastname}
+                onChange={this.handleInputChangeFor('lastName')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="employeeId">
+              Employee ID:
+              <input
+                type="integer"
+                name="employeeId"
+                value={this.state.employeeId}
+                onChange={this.handleInputChangeFor('employeeId')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="email">
+              Email:
+              <input
+                type="text"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleInputChangeFor('email')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="address">
+              Adress:
+              <input
+                type="text"
+                name="address"
+                value={this.state.address}
+                onChange={this.handleInputChangeFor('address')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="addressLine2">
+              Address Line 2:
+              <input
+                type="text"
+                name="addresssLine2"
+                value={this.state.addressLine2}
+                onChange={this.handleInputChangeFor('addressLine2')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="city">
+              City:
+              <input
+                type="text"
+                name="city"
+                value={this.state.city}
+                onChange={this.handleInputChangeFor('city')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="stateName">
+              State:
+              <input
+                type="text"
+                name="stateName"
+                value={this.state.stateName}
+                onChange={this.handleInputChangeFor('stateName')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="zipCode">
+              Zip Code:
+              <input
+                type="text"
+                name="zipCode"
+                value={this.state.zipCode}
+                onChange={this.handleInputChangeFor('zipCode')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="admin">
+              Admin:
+              <input
+                type="text"
+                name="admin"
+                value={this.state.admin}
+                onChange={this.handleInputChangeFor('admin')}
               />
             </label>
           </div>
