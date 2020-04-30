@@ -15,7 +15,8 @@ CREATE TABLE "user" (
     "address_line2" VARCHAR (50),
     "city" VARCHAR (80) NOT NULL,
     "state" VARCHAR (2) NOT NULL,
-    "zip_code" int (5) NOT NULL
+    "zip_code" int (5) NOT NULL,
+    "admin" BOOLEAN DEFAULT false
 );
 
 CREATE TABLE "documents" (
@@ -24,7 +25,7 @@ CREATE TABLE "documents" (
    "description" CHAR,
    "date-accomplished" DATE NOT NULL, 
    "date-expiration" DATE,
-   "user-id" INT FOREIGN KEY REFERENCES "user"."id",
+   "user-id" INT REFERENCES "user"."id",
 );
 
 CREATE TABLE "document-type" (
