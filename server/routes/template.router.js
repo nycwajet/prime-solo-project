@@ -20,7 +20,12 @@ router.get('/', rejectUnauthenticated, (req, res) => {
  * POST route template
  */
 router.post('/', (req, res) => {
-
+    console.log('template.router POST route');
+    console.log(req.body);
+    console.log('is authenticated?', req.isAuthenticated());
+    console.log('user', req.user);
+    res.sendStatus(200);
+    
 });
 
 module.exports = router;

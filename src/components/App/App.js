@@ -17,7 +17,6 @@ import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
 
-import './App.css';
 
 class App extends Component {
   componentDidMount () {
@@ -55,6 +54,8 @@ class App extends Component {
               path="/info"
               component={InfoPage}
             />
+                {/* Add an admin page that only works when admin is true */}
+
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
           </Switch>
