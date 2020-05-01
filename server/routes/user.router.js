@@ -18,11 +18,21 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 router.post('/register', (req, res, next) => {  
   const username = req.body.username;
   const password = encryptLib.encryptPassword(req.body.password);
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const employeeId = req.body.employeeId;
+  const email = req.body.email;
+  const address  = req.body.address;
+  const addressline2 = req.body.addressline2;
+  const city = req.body.city;
+  const stateName = req.body.stateName;
+  const zipCode = req.body.zipCode;
+  const admin = req.body.admin;
 
-  const queryText = 'INSERT INTO "user" (username, password) VALUES ($1, $2) RETURNING id';
-  pool.query(queryText, [username, password])
+  const queryText = 'INSERT INTO "user" (username, password, first_name,last_name, employee_id, email, address, address_line2, city, state, zip_code, admin) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING id';
+  pool.query(queryText, [username, password, firstName, lastName, employeeId, email, address, addressline2, city, stateName, zipCode, admin])
     .then(() => res.sendStatus(201))
-    .catch(() => res.sendStatus(500));
+    .catch((error) => {res.sendStatus(500);console.log('error in register.post', error)});
 });
 
 // Handles login form authenticate/login POST

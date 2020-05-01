@@ -87,7 +87,7 @@ class RegisterPage extends Component {
             </label>
           </div>
           <div>
-            <label htmlFor="fisrtName">
+            <label htmlFor="firstName">
               First Name:
               <input
                 type="text"
@@ -102,8 +102,8 @@ class RegisterPage extends Component {
               Last Name:
               <input
                 type="text"
-                name="lastname"
-                value={this.state.lastname}
+                name="lastName"
+                value={this.state.lastName}
                 onChange={this.handleInputChangeFor('lastName')}
               />
             </label>
@@ -146,7 +146,7 @@ class RegisterPage extends Component {
               Address Line 2:
               <input
                 type="text"
-                name="addresssLine2"
+                name="addressLine2"
                 value={this.state.addressLine2}
                 onChange={this.handleInputChangeFor('addressLine2')}
               />
