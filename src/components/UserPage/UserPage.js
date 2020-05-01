@@ -13,7 +13,7 @@ const UserPage = ({user}) => (
     </h1>
     {/* add user infor ie, first lastname, address */}
     <p>Your ID is: {user.id}</p>
-    {/* Add table to display information */}
+    {/* Add table to display information with edit link*/}
     {/* addDocument button */}
   </div>
 );
