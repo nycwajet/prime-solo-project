@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import AddDocument from '../AddDocument/AddDocument';
 
 
 // this could also be written with destructuring parameters as:
@@ -17,6 +18,13 @@ const UserPage = ({user}) => (
     {/* addDocument button */}
   </div>
 );
+
+<div>
+        <div className="btn" onClick={this.togglePop}>
+          <button>Add Document</button>
+        </div>
+        {this.state.seen ? <AddDocument toggle={this.togglePop} /> : null}
+      </div>
 
 // Instead of taking everything from state, we just want the user info.
 // if you wanted you could write this code like this:
