@@ -17,10 +17,10 @@ export default class AddDocument extends Component {
             &times;
           </span>
           <form>
-            <h3>Register!</h3>
+            <h3>Add Document</h3>
             <label>
-                Type:
-              <input type="text" name="name" />
+                Document Type:
+              <input type="text" name="type" />
             </label>
             <label>
                 Description:
