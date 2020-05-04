@@ -8,7 +8,7 @@ export default class AddDocument extends Component {
   handleClick = () => {
     this.props.toggle();
   };
-
+//popup information: type of ducument, description, date, and expiration
   render() {
     return (
       <div className="modal">
