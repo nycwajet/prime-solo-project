@@ -4,7 +4,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 
-export default class AddDocument extends Component {
+ class AddDocument extends Component {
   handleClick = () => {
     this.props.toggle();
   };
@@ -35,4 +35,4 @@ export default class AddDocument extends Component {
   }
 }
 
-export default connect(mapStateToProps)(AddDocument);
+export default connect()(AddDocument);
