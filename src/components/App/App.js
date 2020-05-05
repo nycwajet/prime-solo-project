@@ -20,7 +20,8 @@ import InfoPage from '../InfoPage/InfoPage';
 
 class App extends Component {
   componentDidMount () {
-    this.props.dispatch({type: 'FETCH_USER'})
+    this.props.dispatch({type: 'FETCH_USER'});
+    this.props.dispatch({type: 'FETCH_DOCUMENTS'});
   }
 
   render() {
