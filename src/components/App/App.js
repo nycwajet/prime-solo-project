@@ -54,6 +54,11 @@ class App extends Component {
               path="/info"
               component={InfoPage}
             />
+            <ProtectedRoute
+              exact
+              path="/userinfo"
+              component={UserPage}
+            />
                 {/* Add an admin page that only works when admin is true */}
 
             {/* If none of the other routes matched, we will show a 404. */}
