@@ -2,14 +2,11 @@ import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
 
-function* fetchDocuments() {
+function* fetchDocuments(action) {
   try {
-    const config = {
-      headers: { 'Content-Type': 'application/json' },
-      withCredentials: true,
-    };
-
-    const response = yield axios.get('/api/documents', config);
+    console.log(action.payload);
+    let id = action.payload.user;
+    const response = yield axios.get(`/api/documents/${id}`);
 
     // now that the session has given us a user object
     // with an id and username set the client-side user object to let

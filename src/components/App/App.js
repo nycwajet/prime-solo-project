@@ -21,7 +21,11 @@ import InfoPage from '../InfoPage/InfoPage';
 class App extends Component {
   componentDidMount () {
     this.props.dispatch({type: 'FETCH_USER'});
-    this.props.dispatch({type: 'FETCH_DOCUMENTS'});
+    // this.props.dispatch({type: 'FETCH_DOCUMENTS', payload:{user:this.props.user}});
+  }
+
+  componentDidUpdate(){
+    this.props.dispatch({type: 'FETCH_DOCUMENTS', payload:{user:this.props.user}});
   }
 
   render() {
@@ -57,7 +61,7 @@ class App extends Component {
             />
             <ProtectedRoute
               exact
-              path="/userinfo"
+              path="/documents"
               component={UserPage}
             />
                 {/* Add an admin page that only works when admin is true */}
@@ -70,5 +74,8 @@ class App extends Component {
       </Router>
   )}
 }
+const mapStateToProps = reduxState => ({
+  user: reduxState.user.id
+});
 
-export default connect()(App);
+export default connect(mapStateToProps)(App);

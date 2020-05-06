@@ -3,16 +3,17 @@ const pool = require('../modules/pool');
 const router = express.Router();
 const {rejectUnauthenticated} = require('../modules/authentication-middleware');
 
-router.get('/api/documents', rejectUnauthenticated, (req, res) => {
-    console.log('req.documents',req.documents);
-    pool.query('SELECT * FROM "documents"  WHERE user-id = $1;', [req.documents.id])
-        .then(results => res.send(results.rows))
-        console.log(results.rows)
-        .catch(error => {
-            console.log('Error selecting user info:', error);
+router.get('/:id', rejectUnauthenticated, (req, res) => {
+   const userId= req.params.id;
+    console.log('In Get request', userId);
+    const queryText = `SELECT * FROM "documents" WHERE "userId" = $1;`;
+    pool.query(queryText, [userId]).then((result) => {
+            res.send(result.rows);
+        }).catch( (error) => {
+            console.log(`Error on query ${error}`);
             res.sendStatus(500);
         });
+
 });
 
-
-
+module.exports = router;
