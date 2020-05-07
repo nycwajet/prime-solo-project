@@ -5,8 +5,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* fetchDocuments(action) {
   try {
     console.log(action.payload);
-    let id = action.payload.user;
-    const response = yield axios.get(`/api/documents/${id}`);
+    const response = yield axios.get(`/api/documents/`);
 
     // now that the session has given us a user object
     // with an id and username set the client-side user object to let

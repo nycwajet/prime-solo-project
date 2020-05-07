@@ -5,8 +5,10 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 
  class AddDocument extends Component {
+
+
   handleClick = () => {
-    this.props.toggle();
+    
   };
 //popup information: type of ducument, description, date, and expiration
   render() {
@@ -18,13 +20,26 @@ import { connect } from 'react-redux';
           </span>
           <form>
             <h3>Add Document</h3>
-            <label>
-                Document Type:
-              <input type="text" name="type" />
-            </label>
+            <label htmlfor="documentType">Document Type</label>
+
+                 <select id="documentType">
+                 <option value="1">Associate</option>
+                 <option value="2">Bachelors</option>
+                 <option value="3">Masters</option>
+                 <option value="4">Certificate</option>
+                 <option value="5">Training</option>
+                 </select>
             <label>
                 Description:
               <input type="text" name="description" />
+            </label>
+            <label>
+                Accomplished Date:
+              <input type="date" name="dateAccomplished" />
+            </label>
+            <label>
+                Expiration Date:
+              <input type="date" name="dateExpiration" />
             </label>
             <br />
             <input type="submit" />
@@ -35,4 +50,8 @@ import { connect } from 'react-redux';
   }
 }
 
-export default connect()(AddDocument);
+const mapStateToProps = state => ({ 
+  
+});
+
+export default connect(mapStateToProps)(AddDocument);

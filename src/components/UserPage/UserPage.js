@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import AddDocument from '../AddDocument/AddDocument';
+import AddDocument from '../AddDocument/AddDocument';
 
 
 // this could also be written with destructuring parameters as:
@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 // and then instead of `props.user.username` you could use `user.username`
 
 const UserPage = (props) => ( 
-
+   
   
   <div>
     <h1 id="welcome">
@@ -20,13 +20,8 @@ const UserPage = (props) => (
     {/* Add table to display information with edit link*/}
     {/* addDocument button */}
     { JSON.stringify(props.user) }
-    {/* <section>
-    <div className="btn" onClick={this.togglePop}>
-    <button>Add Document</button>
-    </div>
-    {this.state.seen ? <AddDocument toggle={this.togglePop} /> : null}
-    </section> */}
-    { JSON.stringify(props.documents) }
+    {JSON.stringify(props.documents)}
+    <AddDocument />
  </div>
 
 ); // This ends the render for the User Page. Keep all the JSX inside here.
@@ -36,7 +31,7 @@ const mapStateToProps = state => ({
   user: state.user,
   // add reducer for your documents
   // documents,
-  documents: state.documents
+  documents: state.documents,
 });
 
 // this allows us to use <App /> in index.js
