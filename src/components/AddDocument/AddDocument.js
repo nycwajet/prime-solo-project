@@ -51,7 +51,7 @@ import { connect } from 'react-redux';
 }
 
 const mapStateToProps = state => ({ 
-  
+  toggle:state.toggle
 });
 
 export default connect(mapStateToProps)(AddDocument);
