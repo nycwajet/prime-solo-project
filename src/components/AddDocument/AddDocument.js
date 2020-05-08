@@ -6,6 +6,20 @@ import { connect } from 'react-redux';
 
  class AddDocument extends Component {
 
+  state={
+    documentType:'',
+    description:'',
+    dateAccomplished:'',
+    dateExpiration:'',
+  }
+
+
+  handleInputChangeFor = propertyName => (event) => {
+    this.setState({
+      [propertyName]: event.target.value,
+    });
+  }
+   
 
   handleClick = () => {
     
@@ -29,17 +43,24 @@ import { connect } from 'react-redux';
                  <option value="4">Certificate</option>
                  <option value="5">Training</option>
                  </select>
-            <label>
+            <label htmlfor="description">
                 Description:
-              <input type="text" name="description" />
+              <input type="text" 
+                     name="description"
+                     value={this.state.description}
+                     onChange={this.handleInputChangeFor('description')} />
             </label>
-            <label>
+            <label htmlFor="dateAccomplished">
                 Accomplished Date:
-              <input type="date" name="dateAccomplished" />
+              <input type="date" 
+                     name="dateAccomplished"
+                     onChange={this.handleInputChangeFor('dateAccomplished')} />
             </label>
-            <label>
+            <label htmlFor="dateExpiration">
                 Expiration Date:
-              <input type="date" name="dateExpiration" />
+              <input type="date" 
+                     name="dateExpiration" 
+                     onChange={this.handleInputChangeFor('dateExpiration')} />
             </label>
             <br />
             <input type="submit" />
